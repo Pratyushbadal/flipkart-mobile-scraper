@@ -23,7 +23,7 @@ def scrape_flipkart(search):
 
         for product in products:
             name = product.find("div", class_="_4rR01T")
-            if name and name.text.strip() == search:
+            if name and search.lower() in name.text.strip().lower():
                 price = product.find("div", class_="_30jeq3")
                 description = product.find("ul", class_="_1xgFaf")
                 review = product.find("div", class_="_3LWZlK")
